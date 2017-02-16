@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block form_action %}/meeting/{{ meeting.id }}{% endblock %}
+{% block input_items %}
+	<div class="input-group date">
+		<input type="text" class="form-control" id="start_date" placeholder="Insert meeting date"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+    </div>
+	<input id="start_time" type="select">
+	<input id="duration" type="select">
+	<input id="meeting_title" type="text" placeholder="Enter a name for your meeting">
+	<input id="participants" type="text" placeholder="Enter email addresses">
+	<input id="agenda" type="text" placeholder="Enter your list of agenda items here. Each line is treated as it's own agenda item">
+	<input type="submit">
+    {% csrf_token %}
+{% endblock %}
